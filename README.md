@@ -56,8 +56,9 @@ Or install it yourself as:
 ## Usage
 
 Includes both `assert_must` and `assert_wont` assertions, but also includes
-`must` and `wont` facilitator assertions that automatically default to
-using the current `subject` method or `@subject` instance variable.
+`must` and `wont` facilitator assertions that automatically default to using
+the current `subject` method (aka "let variable") or `@subject` instance
+variable.
 
 **NOTE:** This gem does not allow matchers to be used with an expectation
   syntax. Let's avoid infecting the objects we're testing.
@@ -95,7 +96,7 @@ describe User do
   subject { User.new }
 
   # Works with shoulda-matchers
-  it "should have fields and association" do
+  it "should have fields and associations" do
     must have_db_column :name
     must belong_to :account
     must have_many :widgets
@@ -124,7 +125,8 @@ end
 
 ## Credits
 
-The idea was originally inspired by the assertions implementation in [minitest-matchers](https://github.com/wojtekmach/minitest-matchers).
+The idea was originally inspired by the matcher assertions implementation in
+[minitest-matchers](https://github.com/wojtekmach/minitest-matchers).
 
 ## License
 
