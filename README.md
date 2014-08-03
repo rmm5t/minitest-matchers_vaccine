@@ -1,4 +1,6 @@
-# Minitest::MatchersVaccine [![Gem Version](http://img.shields.io/gem/v/minitest-matchers_vaccine.svg)](https://rubygems.org/gems/minitest-matchers_vaccine) [![Build Status](https://secure.travis-ci.org/rmm5t/minitest-matchers_vaccine.svg)](http://travis-ci.org/rmm5t/minitest-matchers_vaccine) [![Code Climate](http://img.shields.io/codeclimate/github/rmm5t/minitest-matchers_vaccine.svg)](https://codeclimate.com/github/rmm5t/minitest-matchers_vaccine)
+# Minitest::MatchersVaccine
+
+[![Gem Version](http://img.shields.io/gem/v/minitest-matchers_vaccine.svg)](https://rubygems.org/gems/minitest-matchers_vaccine) [![Build Status](https://secure.travis-ci.org/rmm5t/minitest-matchers_vaccine.svg)](http://travis-ci.org/rmm5t/minitest-matchers_vaccine) [![Code Climate](http://img.shields.io/codeclimate/github/rmm5t/minitest-matchers_vaccine.svg)](https://codeclimate.com/github/rmm5t/minitest-matchers_vaccine)
 
 Adds matcher support to minitest without all the other RSpec-style expectation
 _infections_.
