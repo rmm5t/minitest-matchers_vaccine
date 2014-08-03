@@ -63,7 +63,7 @@ variable.
 **NOTE:** This gem does not allow matchers to be used with an expectation
   syntax. Let's avoid infecting the objects we're testing.
 
-### MiniTest::Test
+### Minitest::Test
 
 ```ruby
 class UserTest < Minitest::Test
@@ -89,7 +89,7 @@ class UserTest < Minitest::Test
 end
 ```
 
-### MiniTest::Spec
+### Minitest::Spec
 
 ```ruby
 describe User do

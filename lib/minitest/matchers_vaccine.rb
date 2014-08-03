@@ -3,7 +3,7 @@ require "minitest/matchers_vaccine/version"
 
 # Borrowed and modified from minitest-matchers, but we don't need all the
 # other RSpec-style expectation "infections."
-module MiniTest
+module Minitest
   module Assertions
     ##
     # Passes if matcher.matches?(subject) returns true
