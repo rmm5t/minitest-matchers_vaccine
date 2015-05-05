@@ -89,7 +89,7 @@ describe "#must" do
 
   describe "without a subject" do
     it "should error" do
-      assert_raises(NameError) { must be_instance_of Array }
+      assert_raises(NoMethodError) { must be_instance_of Array }
     end
   end
 end
@@ -125,7 +125,7 @@ describe "#wont" do
 
   describe "without a subject" do
     it "should error" do
-      assert_raises(NameError) { wont be_instance_of Array }
+      assert_raises(NoMethodError) { wont be_instance_of Array }
     end
   end
 end
