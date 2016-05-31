@@ -38,7 +38,7 @@ module Minitest
     #     must belong_to :account
     #     must have_many :line_items
     #   end
-    def must(matcher, subject = @subject || subject(), msg = nil)
+    def must(matcher, subject = ((defined?(@subject) && @subject) || subject()), msg = nil)
       assert_must matcher, subject, msg
     end
 
@@ -80,7 +80,7 @@ module Minitest
     #   it "should validate" do
     #     wont have_valid(:email).when("foo", "foo@bar", "@bar.com")
     #   end
-    def wont(matcher, subject = @subject || subject(), msg = nil)
+    def wont(matcher, subject = ((defined?(@subject) && @subject) || subject()), msg = nil)
       assert_wont matcher, subject, msg
     end
   end
