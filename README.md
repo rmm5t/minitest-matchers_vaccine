@@ -126,5 +126,5 @@ The idea was originally inspired by the matcher assertions implementation in
 
 ## License
 
-Copyright (c) 2014 Ryan McGeary released under the [MIT
+Copyright (c) 2014-2017 Ryan McGeary released under the [MIT
 license](http://en.wikipedia.org/wiki/MIT_License)
