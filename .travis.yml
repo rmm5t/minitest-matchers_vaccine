@@ -2,9 +2,10 @@ language: ruby
 cache: bundler
 sudo: false
 rvm:
-  - 2.1.9
-  - 2.2.5
-  - 2.3.1
-  - jruby-19mode
+  - 2.2.6
+  - 2.3.3
+  - 2.4.0
 gemfile:
   - Gemfile
+matrix:
+  fast_finish: true
