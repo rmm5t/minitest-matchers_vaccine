@@ -18,21 +18,6 @@ gem is actually heavily inspired by and based upon the assertions in
 minitest-matchers; however, everything else that minitest-matchers brings to
 the table is unnecessary unless you're bent on a true RSpec-style syntax.
 
----
-
-**How You Can Help**
-
-[![Square Cash](http://img.shields.io/badge/square%20cash-$rmm5t-brightgreen.svg)][square]
-[![Book a Codementor session](http://img.shields.io/badge/codementor-book%20a%20session-orange.svg)][codementor]
-
-If you like this project, [buy me a coffee][square] or [book a session with me on Codementor][codementor].
-
-Bitcoin: `1rmm5tv6f997JK5bLcGbRCZyVjZUPkQ2m`
-
-[square]: https://cash.me/$rmm5t "Donate to rmm5t for open source!"
-[bitcoin]: bitcoin:1rmm5tv6f997JK5bLcGbRCZyVjZUPkQ2m?amount=0.01&label=Coffee%20to%20rmm5t%20for%20Open%20Source "Buy rmm5t a coffee for open source!"
-[codementor]: https://www.codementor.io/rmm5t?utm_campaign=profile&utm_source=button-rmm5t&utm_medium=shields "Book a session with rmm5t on Codementor!"
-
 ## Installation
 
 Add this line to your application's Gemfile:
