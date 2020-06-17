@@ -34,8 +34,8 @@ describe "#assert_must" do
   include InstanceOf
 
   it "should be capable of passing" do
-    assert_equal true, assert_must(be_instance_of(Array), [:hello])
-    assert_equal true, assert_must(be_instance_of(String), "hello")
+    assert_must(be_instance_of(Array), [:hello])
+    assert_must(be_instance_of(String), "hello")
   end
 
   it "should be capable of failing" do
@@ -48,8 +48,8 @@ describe "#assert_wont" do
   include InstanceOf
 
   it "should be capable of passing" do
-    assert_equal false, assert_wont(be_instance_of(String), [:hello])
-    assert_equal false, assert_wont(be_instance_of(Array), "hello")
+    assert_wont(be_instance_of(String), [:hello])
+    assert_wont(be_instance_of(Array), "hello")
   end
 
   it "should be capable of failing" do
@@ -65,7 +65,7 @@ describe "#must" do
     subject { [:hello] }
 
     it "should be capable of passing" do
-      assert_equal true, must(be_instance_of(Array))
+      assert must(be_instance_of(Array))
     end
 
     it "should be capable of failing" do
@@ -79,7 +79,7 @@ describe "#must" do
     end
 
     it "should be capable of passing" do
-      assert_equal true, must(be_instance_of(String))
+      assert must(be_instance_of(String))
     end
 
     it "should be capable of failing" do
@@ -101,7 +101,7 @@ describe "#wont" do
     subject { [:hello] }
 
     it "should be capable of passing" do
-      assert_equal false, wont(be_instance_of(String))
+      wont(be_instance_of(String))
     end
 
     it "should be capable of failing" do
@@ -115,7 +115,7 @@ describe "#wont" do
     end
 
     it "should be capable of passing" do
-      assert_equal false, wont(be_instance_of(Array))
+      wont(be_instance_of(Array))
     end
 
     it "should be capable of failing" do
