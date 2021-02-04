@@ -1,7 +1,7 @@
 # Minitest::MatchersVaccine
 
 [![Gem Version](http://img.shields.io/gem/v/minitest-matchers_vaccine.svg)](https://rubygems.org/gems/minitest-matchers_vaccine)
-[![Build Status](https://github.com/rmm5t/minitest-matchers_vaccine/workflows/CI/badge.svg?branch=master)](https://github.com/rmm5t/minitest-matchers_vaccine/actions?query=workflow%3ACI)
+[![Build Status](https://github.com/rmm5t/minitest-matchers_vaccine/workflows/CI/badge.svg)](https://github.com/rmm5t/minitest-matchers_vaccine/actions?query=workflow%3ACI)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ca7aadb1a0a1c1c6782e/maintainability)](https://codeclimate.com/github/rmm5t/minitest-matchers_vaccine)
 
 Adds matcher support to minitest without all the other RSpec-style expectation
