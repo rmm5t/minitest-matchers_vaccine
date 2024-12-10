@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com//), and thi
 
 ## [Unreleased] - TBD
 
+## [1.0.7] - 2024-12-10
+
+- `funding_uri` added to gemspec
+
 ## [1.0.6] - 2022-05-12
 
 - Fix rubygems release
