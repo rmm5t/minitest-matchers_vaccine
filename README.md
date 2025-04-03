@@ -77,20 +77,20 @@ describe User do
   subject { User.new }
 
   # Works with shoulda-matchers
-  it "should have fields and associations" do
+  it "has fields and associations" do
     must have_db_column :name
     must belong_to :account
     must have_many :widgets
   end
 
   # Works with valid_attribute
-  it "should validate" do
+  it "validates" do
     must have_valid(:email).when("a@a.com", "foo@bar.com", "dave@abc.io")
     wont have_valid(:email).when(nil, "foo", "foo@bar", "@bar.com")
   end
 
   # Works with matchers in other libs
-  it "should strip attributes" do
+  it "strips attributes" do
     must strip_attribute :name
   end
 end
