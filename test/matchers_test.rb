@@ -61,6 +61,25 @@ end
 describe "#must" do
   include InstanceOf
 
+  describe "given an explicit subject" do
+    subject { raise "implicit subject must not be evaluated" }
+
+    before do
+      @subject = "implicit"
+    end
+
+    [[:hello], false, nil].each do |value|
+      it "prefers #{value.inspect} over @subject and subject" do
+        must(be_instance_of(value.class), value)
+      end
+
+      it "uses #{value.inspect} without evaluating subject" do
+        remove_instance_variable(:@subject)
+        must(be_instance_of(value.class), value)
+      end
+    end
+  end
+
   describe "given a subject" do
     subject { [:hello] }
 
@@ -87,6 +106,26 @@ describe "#must" do
     end
   end
 
+  [false, nil].each do |value|
+    describe "given @subject = #{value.inspect}" do
+      before do
+        @subject = value
+      end
+
+      it "uses @subject without a subject method" do
+        must(be_instance_of(value.class))
+      end
+
+      describe "with a competing subject method" do
+        subject { "fallback" }
+
+        it "prefers @subject" do
+          must(be_instance_of(value.class))
+        end
+      end
+    end
+  end
+
   describe "without a subject" do
     it "should error" do
       assert_raises(NoMethodError) { must be_instance_of Array }
@@ -96,6 +135,25 @@ end
 
 describe "#wont" do
   include InstanceOf
+
+  describe "given an explicit subject" do
+    subject { raise "implicit subject must not be evaluated" }
+
+    before do
+      @subject = "implicit"
+    end
+
+    [[:hello], false, nil].each do |value|
+      it "prefers #{value.inspect} over @subject and subject" do
+        wont(be_instance_of(String), value)
+      end
+
+      it "uses #{value.inspect} without evaluating subject" do
+        remove_instance_variable(:@subject)
+        wont(be_instance_of(String), value)
+      end
+    end
+  end
 
   describe "given a subject" do
     subject { [:hello] }
@@ -120,6 +178,26 @@ describe "#wont" do
 
     it "should be capable of failing" do
       assert_raises(Minitest::Assertion) { wont be_instance_of String }
+    end
+  end
+
+  [false, nil].each do |value|
+    describe "given @subject = #{value.inspect}" do
+      before do
+        @subject = value
+      end
+
+      it "uses @subject without a subject method" do
+        wont(be_instance_of(String))
+      end
+
+      describe "with a competing subject method" do
+        subject { "fallback" }
+
+        it "prefers @subject" do
+          wont(be_instance_of(String))
+        end
+      end
     end
   end
 

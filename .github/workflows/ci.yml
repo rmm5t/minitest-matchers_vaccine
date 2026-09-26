@@ -21,6 +21,8 @@ jobs:
           - { ruby: "2.7", gemfile: "minitest-5" }
           - { ruby: "3.0", gemfile: "minitest-5" }
           - { ruby: "3.1", gemfile: "minitest-5" }
+          - { ruby: "2.4", gemfile: "minitest-5-minimum" }
+          - { ruby: "4.0", gemfile: "minitest-5-minimum" }
 
     env:
       BUNDLE_GEMFILE: gemfiles/${{ matrix.gemfile }}.gemfile
@@ -35,3 +37,23 @@ jobs:
           bundler-cache: true # runs `bundle install` and caches gems automatically
       - name: Run tests
         run: bundle exec rake
+
+  integration:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby: ["3.2", "4.0"]
+        gemfile:
+          - minitest-5-integration
+          - minitest-6-integration
+    env:
+      BUNDLE_GEMFILE: gemfiles/${{ matrix.gemfile }}.gemfile
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+      - name: Run integration tests
+        run: bundle exec rake test:integration

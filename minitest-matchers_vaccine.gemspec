@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/#{username}/#{spec.name}"
   spec.license       = "MIT"
 
-  spec.files         = Dir["{lib,test}/**/*", "README*", "LICENSE*"]
+  spec.files         = Dir["{lib,test}/**/*", "README*", "LICENSE*", "CHANGELOG.md"]
   spec.test_files    = Dir["{test}/**/*"]
   spec.require_paths = ["lib"]
 
@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
     "funding_uri"       => "https://github.com/sponsors/#{username}",
   }
 
-  spec.required_ruby_version = ">= 1.9"
+  spec.required_ruby_version = ">= 2.4"
 
   spec.add_dependency "minitest", ">= 5.0", "< 7.0"
   spec.add_development_dependency "rake"
