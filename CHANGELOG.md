@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com//), and thi
 
 ## [Unreleased] - TBD
 
+## [1.2.0] - 2026-09-26
+
 - Fix `must` and `wont` to use `@subject` when explicitly set to `false` or `nil`.
 - Raise the minimum Ruby version to 2.4 to match the CI support policy.
 - Add pinned Minitest 5.0.0 CI checks on Ruby 2.4 and 4.0.
@@ -47,7 +49,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com//), and thi
 
 - Initial release
 
-[Unreleased]: https://github.com/rmm5t/minitest-matchers_vaccine/compare/v1.1.0..HEAD
+[Unreleased]: https://github.com/rmm5t/minitest-matchers_vaccine/compare/v1.2.0..HEAD
+[1.2.0]: https://github.com/rmm5t/minitest-matchers_vaccine/compare/v1.1.0..v1.2.0
 [1.1.0]: https://github.com/rmm5t/minitest-matchers_vaccine/compare/v1.0.7..v1.1.0
 [1.0.7]: https://github.com/rmm5t/minitest-matchers_vaccine/compare/v1.0.6..v1.0.7
 [1.0.6]: https://github.com/rmm5t/minitest-matchers_vaccine/compare/v1.0.5..v1.0.6
