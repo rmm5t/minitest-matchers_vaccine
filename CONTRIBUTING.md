@@ -23,12 +23,22 @@ At this point you're waiting on us. We like to at least comment on, if not
 accept, pull requests within three business days (and, typically, one business
 day). We may suggest some changes or improvements or alternatives.
 
-Some things that will increase the chance that your pull request is accepted,
-taken straight from the Ruby on Rails guide:
+## Testing Against Minitest 5 and 6
+
+Run these commands from the repository root to test against each supported
+Minitest major version. Use Ruby 3.2 or newer to run both versions.
+
+```sh
+BUNDLE_GEMFILE=gemfiles/minitest-5.gemfile bundle install
+BUNDLE_GEMFILE=gemfiles/minitest-5.gemfile bundle exec rake
+
+BUNDLE_GEMFILE=gemfiles/minitest-6.gemfile bundle install
+BUNDLE_GEMFILE=gemfiles/minitest-6.gemfile bundle exec rake
+```
 
 ## Conventions
 
-* Use Rails idioms and helpers.
+* Use idiomatic Ruby and Minitest assertions and helpers.
 * Include tests that fail without your code, and pass with your code.
 * Update the documentation, the surrounding one, examples elsewhere, guides,
   whatever is affected by your contribution
