@@ -31,6 +31,21 @@ Or install it yourself as:
 
     $ gem install minitest-matchers_vaccine
 
+## Compatibility
+
+Ruby 2.4 or newer and Minitest 5 or 6 are supported:
+
+| Minitest | Ruby requirement |
+| --- | --- |
+| 5.x (minimum 5.0.0) | 2.4 or newer, with a Minitest release compatible with your Ruby version |
+| 6.x | 3.2 or newer |
+
+CI tests Minitest 5 on Ruby 2.4–2.7 and 3.0–4.0, and Minitest 6 on Ruby
+3.2–4.0. Separate jobs pin Minitest 5.0.0 on Ruby 2.4 and 4.0 to verify the
+dependency's lower bound. Ruby versions earlier than 2.4 are no longer supported.
+
+Third-party matcher libraries have their own Ruby and Minitest requirements.
+
 ## Usage
 
 Load the gem in your `test_helper.rb` after Minitest:

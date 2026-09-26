@@ -21,6 +21,8 @@ jobs:
           - { ruby: "2.7", gemfile: "minitest-5" }
           - { ruby: "3.0", gemfile: "minitest-5" }
           - { ruby: "3.1", gemfile: "minitest-5" }
+          - { ruby: "2.4", gemfile: "minitest-5-minimum" }
+          - { ruby: "4.0", gemfile: "minitest-5-minimum" }
 
     env:
       BUNDLE_GEMFILE: gemfiles/${{ matrix.gemfile }}.gemfile

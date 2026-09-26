@@ -36,6 +36,16 @@ BUNDLE_GEMFILE=gemfiles/minitest-6.gemfile bundle install
 BUNDLE_GEMFILE=gemfiles/minitest-6.gemfile bundle exec rake
 ```
 
+Also test the minimum supported Minitest version with the pinned Gemfile:
+
+```sh
+BUNDLE_GEMFILE=gemfiles/minitest-5-minimum.gemfile bundle install
+BUNDLE_GEMFILE=gemfiles/minitest-5-minimum.gemfile bundle exec rake
+```
+
+CI runs this lower-bound check on Ruby 2.4 and 4.0. See the
+[compatibility policy](README.md#compatibility) for the supported combinations.
+
 ## Conventions
 
 * Use idiomatic Ruby and Minitest assertions and helpers.

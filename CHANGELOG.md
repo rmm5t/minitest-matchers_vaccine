@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com//), and thi
 ## [Unreleased] - TBD
 
 - Fix `must` and `wont` to use `@subject` when explicitly set to `false` or `nil`.
+- Raise the minimum Ruby version to 2.4 to match the CI support policy.
+- Add pinned Minitest 5.0.0 CI checks on Ruby 2.4 and 4.0.
 
 ## [1.1.0] - 2026-01-08
 
