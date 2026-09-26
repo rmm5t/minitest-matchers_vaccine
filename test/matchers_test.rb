@@ -87,6 +87,26 @@ describe "#must" do
     end
   end
 
+  [false, nil].each do |value|
+    describe "given @subject = #{value.inspect}" do
+      before do
+        @subject = value
+      end
+
+      it "uses @subject without a subject method" do
+        must(be_instance_of(value.class))
+      end
+
+      describe "with a competing subject method" do
+        subject { "fallback" }
+
+        it "prefers @subject" do
+          must(be_instance_of(value.class))
+        end
+      end
+    end
+  end
+
   describe "without a subject" do
     it "should error" do
       assert_raises(NoMethodError) { must be_instance_of Array }
@@ -120,6 +140,26 @@ describe "#wont" do
 
     it "should be capable of failing" do
       assert_raises(Minitest::Assertion) { wont be_instance_of String }
+    end
+  end
+
+  [false, nil].each do |value|
+    describe "given @subject = #{value.inspect}" do
+      before do
+        @subject = value
+      end
+
+      it "uses @subject without a subject method" do
+        wont(be_instance_of(String))
+      end
+
+      describe "with a competing subject method" do
+        subject { "fallback" }
+
+        it "prefers @subject" do
+          wont(be_instance_of(String))
+        end
+      end
     end
   end
 

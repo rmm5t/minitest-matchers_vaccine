@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com//), and thi
 
 ## [Unreleased] - TBD
 
+- Fix `must` and `wont` to use `@subject` when explicitly set to `false` or `nil`.
+
 ## [1.1.0] - 2026-01-08
 
 - Add support for Minitest 6
