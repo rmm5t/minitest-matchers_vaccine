@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/#{username}/#{spec.name}"
   spec.license       = "MIT"
 
-  spec.files         = Dir["{lib,test}/**/*", "README*", "LICENSE*"]
+  spec.files         = Dir["{lib,test}/**/*", "README*", "LICENSE*", "CHANGELOG.md"]
   spec.test_files    = Dir["{test}/**/*"]
   spec.require_paths = ["lib"]
 
