@@ -61,6 +61,25 @@ end
 describe "#must" do
   include InstanceOf
 
+  describe "given an explicit subject" do
+    subject { raise "implicit subject must not be evaluated" }
+
+    before do
+      @subject = "implicit"
+    end
+
+    [[:hello], false, nil].each do |value|
+      it "prefers #{value.inspect} over @subject and subject" do
+        must(be_instance_of(value.class), value)
+      end
+
+      it "uses #{value.inspect} without evaluating subject" do
+        remove_instance_variable(:@subject)
+        must(be_instance_of(value.class), value)
+      end
+    end
+  end
+
   describe "given a subject" do
     subject { [:hello] }
 
@@ -116,6 +135,25 @@ end
 
 describe "#wont" do
   include InstanceOf
+
+  describe "given an explicit subject" do
+    subject { raise "implicit subject must not be evaluated" }
+
+    before do
+      @subject = "implicit"
+    end
+
+    [[:hello], false, nil].each do |value|
+      it "prefers #{value.inspect} over @subject and subject" do
+        wont(be_instance_of(String), value)
+      end
+
+      it "uses #{value.inspect} without evaluating subject" do
+        remove_instance_variable(:@subject)
+        wont(be_instance_of(String), value)
+      end
+    end
+  end
 
   describe "given a subject" do
     subject { [:hello] }
