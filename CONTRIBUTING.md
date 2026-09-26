@@ -46,6 +46,24 @@ BUNDLE_GEMFILE=gemfiles/minitest-5-minimum.gemfile bundle exec rake
 CI runs this lower-bound check on Ruby 2.4 and 4.0. See the
 [compatibility policy](README.md#compatibility) for the supported combinations.
 
+## Testing With Real Matchers
+
+The integration suite uses `rspec-expectations` matchers to check positive and
+negative assertions, matcher-specific negation, and failure messages. Run it
+with the dedicated Gemfiles:
+
+```sh
+BUNDLE_GEMFILE=gemfiles/minitest-5-integration.gemfile bundle install
+BUNDLE_GEMFILE=gemfiles/minitest-5-integration.gemfile bundle exec rake test:integration
+
+BUNDLE_GEMFILE=gemfiles/minitest-6-integration.gemfile bundle install
+BUNDLE_GEMFILE=gemfiles/minitest-6-integration.gemfile bundle exec rake test:integration
+```
+
+CI runs these checks on Ruby 3.2 and 4.0 with both Minitest majors. The default
+`bundle exec rake` task runs the unit suite; use `test:integration` to run the
+real-matcher checks with their additional dependencies.
+
 ## Conventions
 
 * Use idiomatic Ruby and Minitest assertions and helpers.
