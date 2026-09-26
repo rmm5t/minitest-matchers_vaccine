@@ -48,9 +48,17 @@ CI runs this lower-bound check on Ruby 2.4 and 4.0. See the
 
 ## Testing With Real Matchers
 
-The integration suite uses `rspec-expectations` matchers to check positive and
-negative assertions, matcher-specific negation, and failure messages. Run it
-with the dedicated Gemfiles:
+The integration suite exercises real matchers from:
+
+* `rspec-expectations`: value and collection matching, including matcher-specific
+  negation.
+* `shoulda-matchers`: presence and length validations on an ActiveModel fixture.
+* `strip_attributes`: whitespace normalization and excluded attributes on an
+  ActiveModel fixture with validation callbacks.
+
+Each library is tested with positive and negative assertions, implicit subjects,
+and failure messages, including custom context. The model fixtures run in memory
+without a database. Run the suite with the dedicated Gemfiles:
 
 ```sh
 BUNDLE_GEMFILE=gemfiles/minitest-5-integration.gemfile bundle install
@@ -60,7 +68,9 @@ BUNDLE_GEMFILE=gemfiles/minitest-6-integration.gemfile bundle install
 BUNDLE_GEMFILE=gemfiles/minitest-6-integration.gemfile bundle exec rake test:integration
 ```
 
-CI runs these checks on Ruby 3.2 and 4.0 with both Minitest majors. The default
+CI runs these checks on Ruby 3.2 and 4.0 with both Minitest majors. The integration
+Gemfiles allow Shoulda Matchers 7 and 8 so Bundler can select a compatible version
+(Shoulda Matchers 8 requires Ruby 3.3 or newer). The default
 `bundle exec rake` task runs the unit suite; use `test:integration` to run the
 real-matcher checks with their additional dependencies.
 
